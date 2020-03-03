@@ -1,37 +1,87 @@
-Book management system
-Book management system is a simple website that gives info to users about the book it's author and languages used in it. This projects allows the authorized user only to create, update and delete the book's info. Here a async message is sent to the author of the book if changes occured in the book
+# Project Title
 
-Content
--Installation -Usage
+One Paragraph of project description goes here
 
-Installation
-pip install -r requirements.txt
+## Getting Started
 
-Usage
-In order to use this device first of all,you should install a async task broker such as Redis or RabbitMq.In this project I have used RabbitMq. So, to install RabbitMq for -Ubuntu based System
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-sudo apt-get install rabbitmq-server
+### Prerequisites
 
--Windows based System
+What things you need to install the software and how to install them
 
-Please download and Install from RabbitMq website Please install erlang first from www.erlang.org
+```
+Give examples
+```
 
-Then enable and start RabbitMq service for ubuntu based system
+### Installing
 
-systemctl enable rabbitmq-server systemctl start rabbitmq-server
+A step by step series of examples that tell you how to get a development env running
 
-For windows based system please enable the plugin
+Say what the step will be
 
-rabbitmq-plugins enable rabbitmq_management
+```
+Give the example
+```
 
-Then add broker configuration of settings.py file
+And repeat
 
-CELERY_BROKER_URL ='amqp://localhost'
+```
+until finished
+```
 
-After all the procedure, open a new terminal and run following command
+End with an example of getting some data out of the system or using it for a little demo
 
-celery -A <project_name> worker -l info NOTE: For those using Windows 10 please write the following code the run the celery task celery -A <project_name> worker -l info -P gevent
+## Running the tests
 
-The use of dotenv is to store the info of users in environment variable.In order to use it add following code into settings.py. Store your variable in .env file
+Explain how to run the automated tests for this system
 
-from dotenv import load_dotenv,find_dotenv load_dotenv()
+### Break down into end to end tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+### And coding style tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
+## Authors
+
+* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
