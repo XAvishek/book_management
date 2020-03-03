@@ -1,0 +1,18 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+autopep8 = "*"
+
+[packages]
+django = "==3.0.3"
+celery = "*"
+python-dotenv = "*"
+django-allauth = "*"
+pillow = "*"
+django-crispy-forms = "==1.9.0"
+
+[requires]
+python_version = "3.7"

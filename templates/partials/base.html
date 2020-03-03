@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ {% load static %}
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href='{% static "fonts/material-icon/css/material-design-iconic-font.min.css" %}'>
+
+    <!-- Main css -->
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container">
+
+    {% block navbar %}
+    
+    {% endblock navbar %}
+
+<!-- Page Content -->
+    {% block content %}
+    
+    {% endblock content %}
+<!-- /.container -->
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {% block script %}
+    
+    {% endblock script %}
+    
+  </body>
+</html>

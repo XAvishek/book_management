@@ -1,0 +1,85 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+
+{% block navbar %}
+{% include "partials/navbar.html" %}
+{% endblock navbar %}
+{% block content %}
+
+
+  <!-- Book Item Heading -->
+  <h1 class="my-4">{{ book.title|title }}
+  <br>-
+    <small>{{ book.author|title }}</small>
+  </h1>
+
+  <!-- Book Item Row -->
+  <div class="row">
+
+    <div class="col-md-5">
+      <img class="img-fluid" src="{{ book.image.url }}" style="width: 300px;height:400px;" alt="">
+    </div>
+
+    <div class="col-md-7">
+      <h3 class="my-3">Book Description</h3>
+      <p>{{ book.description }}</p>
+      <h3 class="my-3">Book Details</h3>
+      <ul>
+        <li>Genre: <a href="{% url 'genre_book' genre=book.get_genre_display %}">{{ book.get_genre_display|title }}</a></li>
+        <li>Author: <a href="#">{{ book.author|title }}</a></li>
+        <li>Uploaded at:{{ book.created_at.date}}</li>
+
+      </ul>
+      <a href="{{book.document.url}}"  target="_blank"><button type="button" class="btn btn-info">Read</button></a>
+      
+    {% if request.user.is_authenticated and request.user == book.author %}
+            <a href="{{ book.get_absolute_url }}update/"> <button class="btn btn-blue">Update</button></a>
+            {% include "partials/delete_modal.html" %}
+            {% endif %}
+    </div>
+  
+    
+  </div>
+  <!-- /.row -->
+
+  <!-- Related Books Row 
+  <h3 class="my-4">Similar Books</h3>
+
+  <div class="row">
+  {% for book in similar_book  %}
+  
+  
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+            <img class="img-fluid" src="{{ book.image.url }}" alt="">
+          </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+    </div>
+{% endfor %}
+  </div> -->
+  <!-- /.row --> 
+
+  {% endblock content %}
+
+{% block script %}
+{% include "partials/script.html" %}
+{% endblock script %}

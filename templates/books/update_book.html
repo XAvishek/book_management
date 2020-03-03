@@ -1,0 +1,22 @@
+{% extends "partials/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block navbar %}
+{% include "partials/navbar.html" %}
+{% endblock navbar %}
+
+{% block content %}
+<div class = 'col-lg-12'>
+<div >
+    <form method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-danger">Update Book</button>
+    </form>
+</div>
+</div>
+{% endblock content %}
+
+{% block script %}
+{% include "partials/script.html" %}
+{% endblock script %}
