@@ -14,7 +14,9 @@
     <small>{{ book.author|title }}</small>
   </h1>
 
-  <!-- Book Item Row -->
+  {% load ratings %}
+  
+  <!-- Book Item Row -->  
   <div class="row">
 
     <div class="col-md-5">
@@ -22,13 +24,19 @@
     </div>
 
     <div class="col-md-7">
-      <h3 class="my-3">Book Description</h3>
+      <h3 class="my-3">Book Description</h3> {% ratings object %}
       <p>{{ book.description }}</p>
       <h3 class="my-3">Book Details</h3>
       <ul>
         <li>Genre: <a href="{% url 'genre_book' genre=book.get_genre_display %}">{{ book.get_genre_display|title }}</a></li>
         <li>Author: <a href="#">{{ book.author|title }}</a></li>
-        <li>Uploaded at:{{ book.created_at.date}}</li>
+        <li>Language:{% for tag in book.language.all %}
+          <li class="small_language">
+          {{tag.name}} &nbsp;
+          {% if not forloop.last %}
+          {% endif %}</li> </li>
+          {% endfor %}
+        <li>Uploaded at: {{ book.created_at.date}}</li>
 
       </ul>
       <a href="{{book.document.url}}"  target="_blank"><button type="button" class="btn btn-info">Read</button></a>

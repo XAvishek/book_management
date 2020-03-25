@@ -13,6 +13,8 @@ python-dotenv = "*"
 django-allauth = "*"
 pillow = "*"
 django-crispy-forms = "==1.9.0"
+django-star-ratings = "*"
+django-cleanup = "*"
 
 [requires]
 python_version = "3.7"

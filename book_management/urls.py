@@ -25,4 +25,5 @@ urlpatterns = [
     path('', include('allauth.urls')),
     path('', HomeView.as_view(), name='home'),
     path('book/', include('books.urls')),
+    path('ratings/', include('star_ratings.urls', namespace='ratings'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

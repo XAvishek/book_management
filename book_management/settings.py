@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'crispy_forms',
-
+    'star_ratings',
+    'django_cleanup.apps.CleanupConfig',
     # custom_apps
     'accounts',
     'books',
