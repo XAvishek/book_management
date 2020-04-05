@@ -5,7 +5,7 @@ Book Management is a web app created using Django and Celery.It can be used to c
 ## Installation
 Install all the required packages using
 
-pip install -r requirements.txt 
+pip install -r requirements.txt or pipenv install
 
 
 ### Prerequisites
